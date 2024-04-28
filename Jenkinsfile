@@ -1,10 +1,10 @@
 pipeline {
-    agent { label 'agentmaven' }
+    agent { docker { image 'node:20.11.1-alpine3.19' } }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
-             }
+                sh 'node --version'
+            }
         }
     }
 }

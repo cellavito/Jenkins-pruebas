@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'node:20.11.1-alpine3.19' } }
+        agent { label 'docker-agent-jdk17' }
     stages {
         stage('build') {
             steps {
-                sh 'node --version'
+                sh 'mvn --version'
             }
         }
     }
